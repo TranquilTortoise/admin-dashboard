@@ -6,6 +6,13 @@
             font-style: normal;
 }
 
+:root {
+    --sky-blue: rgb(0, 60, 255);
+    --light-blue: rgb(129, 129, 209);
+    --white: rgb(240, 224, 240);
+    --gold: rgb(211, 137, 26);
+}
+
 *, *::before, *::after {
 	box-sizing: border-box;
 }
@@ -51,15 +58,15 @@ li {
 
 .header {
     grid-area: header;
-    background: green
+    background: var(--white);
 }
 
 .sidebar {
     grid-area: sidebar;
-    background: blue;
+    background: var(--sky-blue);
 }
 
 .main-container {
     grid-area: main-container;
-    background: purple;
+    background: var(--light-blue);
 }
