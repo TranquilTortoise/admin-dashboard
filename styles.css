@@ -64,10 +64,13 @@ li {
     padding: 1em;
 }
 
-.sidebar embed {
-    filter: brightness(0) invert(1);
+embed {
     width: 2em;
     height: 2em;
+}
+
+.sidebar embed {
+    filter: brightness(0) invert(1);
 }
 
 .sidebar-list {
