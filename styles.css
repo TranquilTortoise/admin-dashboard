@@ -24,6 +24,11 @@
     padding: 0;
 }
 
+embed {
+    width: 2em;
+    height: 2em;
+}
+
 body {
     height: 100vh;
     line-height: calc(1em + 0.5rem);
@@ -36,6 +41,12 @@ body {
 
 button {
     font: inherit;
+    height: 2em;
+    align-self: center;
+    border: none;
+    background-color: var(--sky-blue);
+    color: var(--white);
+    border-radius: 1em;
 }
 
 p {
@@ -56,17 +67,87 @@ li {
 .header {
     grid-area: header;
     background: var(--white);
+    padding: 1em;
+    display: grid;
+    grid-template: 1fr 2fr / 3fr 2fr;
+    grid-template-areas:
+        "search-container       profile-container"
+        "greeting-container     button-container";
+}
+
+.search-container {
+    grid-area: search-container;
+    display: flex;
+    gap: 1em;
+}
+
+input {
+    background-color: var(--light-blue);
+    border-radius: 1em;
+    border: none;
+    height: 2em;
+    flex: 1;
+}
+
+.profile-container {
+    grid-area: profile-container;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+}
+
+.profile-container p {
+    font-weight: bold;
+}
+
+.greeting-container {
+    padding: 2em;
+    grid-area: greeting-container;
+    display: grid;
+    grid-template: repeat(2, 1fr) / 1fr 3fr;
+    grid-template-areas:
+        "icn   greeting"
+        "icn   name";
+}
+
+.icon-wrapper {
+    grid-area: icn;
+    align-self: center;
+}
+
+.icon-wrapper embed {
+    height: 6em;
+    width: 6em;
+}
+
+.greeting {
+    grid-area: greeting;
+    font-size: 0.75em;
+    align-self: self-end;
+}
+
+.name {
+    grid-area: name;
+    font-size: 1.5em;
+}
+
+.greeting,
+.name {
+    font-weight: bold;
+}
+
+.button-container {
+    grid-area: button-container;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
 }
 
 .sidebar {
     grid-area: sidebar;
     background: var(--sky-blue);
     padding: 1em;
-}
-
-embed {
-    width: 2em;
-    height: 2em;
 }
 
 .sidebar embed {
@@ -88,7 +169,8 @@ embed {
     height: 2.5em;
 }
 
-.dashboard-item p {
+.dashboard-item p,
+.profile-container p {
     font-size: 1.5em;
 }
 
