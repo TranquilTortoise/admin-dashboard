@@ -7,9 +7,11 @@
 }
 
 :root {
+    font-family: "roboto";
+    letter-spacing: 0.1em;
     --sky-blue: rgb(0, 60, 255);
-    --light-blue: rgb(129, 129, 209);
-    --white: rgb(240, 224, 240);
+    --light-blue: rgb(184, 184, 238);
+    --white: rgb(252, 248, 252);
     --gold: rgb(211, 137, 26);
 }
 
@@ -19,6 +21,7 @@
 
 * {
 	margin: 0;
+    padding: 0;
 }
 
 body {
@@ -31,17 +34,8 @@ body {
         "sidebar    main-container"
 }
 
-img {
-    display: block;
-    max-width: 100%;
-}
-
 button {
     font: inherit;
-}
-
-p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
 }
 
 p {
@@ -54,6 +48,9 @@ h1, h2, h3, h4, h5, h6 {
 
 li {
     list-style-type: none;
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 .header {
@@ -64,6 +61,45 @@ li {
 .sidebar {
     grid-area: sidebar;
     background: var(--sky-blue);
+    padding: 1em;
+}
+
+.sidebar embed {
+    filter: brightness(0) invert(1);
+    width: 2em;
+    height: 2em;
+}
+
+.sidebar-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.dashboard-item {
+    margin-bottom: 3em;
+}
+
+.dashboard-item embed {
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.dashboard-item p {
+    font-size: 1.5em;
+}
+
+ul li {
+    display: flex;
+    gap: 1em;
+}
+
+li p {
+    align-self: center;
+}
+
+.settings {
+    margin-top: 3em;
 }
 
 .main-container {
